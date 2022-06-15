@@ -4,3 +4,39 @@
     box-sizing: border-box;
     
 }
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: #5372F7;
+
+}
+.container{
+    width: 690px;
+    background:#fff;
+    border-radius: 7px;
+    padding: 30px;
+
+}
+.wrapper{
+    border: 1px solid #bbb;
+
+    border-radius: 5px;
+
+}
+.text-input textarea{
+    height: 250px;
+    width: 100%;
+
+border: none;
+outline: none;
+background: none;
+font-size: 18px;
+border-radius: 5px;
+
+}
+.wrapper .text-input{
+    display: flex;
+
+}

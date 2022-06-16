@@ -3,6 +3,7 @@ const toText=document.querySelector(".to-text");
  selectTag=document.querySelectorAll("select");
  exchangeIcon=document.querySelector(".exchange");
 translatorBtn=document.querySelector("button");
+icons=document.querySelectorAll(".row i");
 
 
 selectTag.forEach((tag,id)=>{
@@ -46,4 +47,10 @@ exchangeIcon.addEventListener("click",()=>{
     toText.value=tempText;
     selectTag[1].value=tempLang;
 
-})
+});
+
+icons.forEach(icon=>{
+icon.addEventListener("click",({target})=>{
+    console.log(target)
+});
+});

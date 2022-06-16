@@ -23,9 +23,10 @@ selectTag.forEach((tag,id)=>{
 
 translatorBtn.addEventListener("click",()=>{
 let text=formText.value,
-translateForm=selectTag[0].value,
+translateFrom=selectTag[0].value,
 translateTo=selectTag[1].value;
 
+let api_url=`https://api.mymemory.translated.net/get?q=${text}&langpair=${translateFrom}|${translateTo}`;
 
 
 console.log(text,translateForm,translateTo);

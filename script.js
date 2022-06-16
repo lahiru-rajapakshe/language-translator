@@ -1,6 +1,7 @@
 const formText=document.querySelector(".form-text");
 const toText=document.querySelector(".to-text");
  selectTag=document.querySelectorAll("select");
+ exchangeIcon=document.querySelector(".exchange");
 translatorBtn=document.querySelector("button");
 
 
@@ -36,3 +37,10 @@ fetch(api_url).then(res=>res.json()).then(data=>{
 
 
 });
+
+exchangeIcon.addEventListener("click",()=>{
+    let tempText=formText.value;
+    formText.value=toText.value;
+    toText.value=tempText;
+    
+})

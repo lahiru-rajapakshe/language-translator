@@ -65,6 +65,7 @@ border-bottom: 1px solid #bbb;
     font-size: 14px;
     cursor: pointer;
     width: 50px;
+    justify-content: center;
      
 }
 .controls .row select{
@@ -106,5 +107,5 @@ border-bottom: 1px solid #bbb;
 
     color: #fff;
     font-size: 17px;
-    
+    outline: none;
 }

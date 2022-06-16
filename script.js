@@ -51,6 +51,16 @@ exchangeIcon.addEventListener("click",()=>{
 
 icons.forEach(icon=>{
 icon.addEventListener("click",({target})=>{
-    console.log(target)
+    if(target.classList.contains("fa-copy")){
+        if(target.id=="from"){
+            console.log("copy icon clicked");
+        }else{
+            console.log(" to copy icon clicked");
+            
+        }
+    }else{
+        console.log(" speech icon clicked");
+        
+    }
 });
 });

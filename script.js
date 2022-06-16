@@ -53,9 +53,10 @@ icons.forEach(icon=>{
 icon.addEventListener("click",({target})=>{
     if(target.classList.contains("fa-copy")){
         if(target.id=="from"){
-            console.log("copy icon clicked");
+            navigator.clipboard.writeText(formText.value);
         }else{
-            console.log(" to copy icon clicked");
+            navigator.clipboard.writeText(toText.value);
+            // console.log(" to copy icon clicked");
             
         }
     }else{

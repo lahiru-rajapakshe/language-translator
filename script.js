@@ -1,4 +1,8 @@
-const selectTag=document.querySelectorAll("select");
+const formText=document.querySelector(".form-text");
+ selectTag=document.querySelectorAll("select");
+translatorBtn=document.querySelector("button");
+
+
 selectTag.forEach((tag,id)=>{
   
     for (const country_code in countries) {
@@ -15,4 +19,14 @@ selectTag.forEach((tag,id)=>{
         tag.insertAdjacentHTML("beforeend",option);
        
     }
-})
+});
+
+translatorBtn.addEventListener("click",()=>{
+let text=formText.value,
+translateForm=selectTag[0].value,
+translateTo=selectTag[1].value;
+
+
+
+console.log(text,translateForm,translateTo);
+});

@@ -1,4 +1,5 @@
 const formText=document.querySelector(".form-text");
+const toText=document.querySelector(".to-text");
  selectTag=document.querySelectorAll("select");
 translatorBtn=document.querySelector("button");
 
@@ -28,8 +29,10 @@ translateTo=selectTag[1].value;
 
 let api_url=`https://api.mymemory.translated.net/get?q=${text}&langpair=${translateFrom}|${translateTo}`;
 fetch(api_url).then(res=>res.json()).then(data=>{
-    console.log(data);
+    // console.log(data);
+    toText.value=data.responseData.translatedText;
+     
 });
 
-console.log(text,translateForm,translateTo);
+
 });

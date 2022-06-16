@@ -40,7 +40,10 @@ fetch(api_url).then(res=>res.json()).then(data=>{
 
 exchangeIcon.addEventListener("click",()=>{
     let tempText=formText.value;
+    let tempLang=selectTag[0].value;
     formText.value=toText.value;
+    selectTag[0].value=selectTag[1].value;
     toText.value=tempText;
-    
+    selectTag[1].value=tempLang;
+
 })

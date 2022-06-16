@@ -27,7 +27,9 @@ translateFrom=selectTag[0].value,
 translateTo=selectTag[1].value;
 
 let api_url=`https://api.mymemory.translated.net/get?q=${text}&langpair=${translateFrom}|${translateTo}`;
-
+fetch(api_url).then(res=>res.json()).then(data=>{
+    console.log(data);
+});
 
 console.log(text,translateForm,translateTo);
 });

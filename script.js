@@ -28,12 +28,14 @@ translatorBtn.addEventListener("click",()=>{
 let text=formText.value,
 translateFrom=selectTag[0].value,
 translateTo=selectTag[1].value;
+if(!text)return;
+toText.setAttribute("placeholder","Translating..");
 
 let api_url=`https://api.mymemory.translated.net/get?q=${text}&langpair=${translateFrom}|${translateTo}`;
 fetch(api_url).then(res=>res.json()).then(data=>{
     // console.log(data);
     toText.value=data.responseData.translatedText;
-     
+    toText.setAttribute("placeholder","Translation");
 });
 
 
@@ -60,7 +62,20 @@ icon.addEventListener("click",({target})=>{
             
         }
     }else{
-        console.log(" speech icon clicked");
+        let utterance;
+
+        if(target.id=="from"){
+            // navigator.clipboard.writeText(formText.value);
+            utterance=new SpeechSynthesisUtterance(formText.value);
+            utterance.lang=selectTag[0].value;
+        }else{
+            utterance=new SpeechSynthesisUtterance(toText.value);
+            utterance.lang=selectTag[1].value;
+            // navigator.clipboard.writeText(toText.value);
+            // console.log(" to copy icon clicked");
+            
+        }
+        speechSynthesis.speak(utterance);
         
     }
 });
